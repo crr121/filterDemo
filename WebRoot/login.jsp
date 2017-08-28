@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <font color="red">${msg }</font>
+  <c:remove var="msg" scope="session"/>
    <form action="loginServlet.do" method="post">
   	 用户名：<input type="text" name="name"/></br></br>
    	密&nbsp;&nbsp;码:<input type="password" name="pwd"/></br></br>
